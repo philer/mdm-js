@@ -1,0 +1,29 @@
+{
+  "root": true,
+  "extends": "eslint:recommended",
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "rules": {
+    "block-scoped-var": "warn",
+    "comma-dangle": [
+      "warn",
+      "always-multiline"
+    ],
+    "no-console": "off",
+    "no-var": "warn",
+    "semi": [
+      "error",
+      "always"
+    ],
+    "strict": "error"
+  },
+  "env": {
+    "browser": true
+  },
+  "globals": {
+    "global": false,
+    "Promise": false
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "mdm-js",
+  "version": "0.1.0",
+  "description": "A usable wrapper for MDM's webkit greeter's API",
+  "author": "Philipp Miller",
+  "license": "ISC",
+  "keywords": ["MDM", "Linux Mint", "API", "themes", "webkit"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/philer/mdm-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/philer/mdm-js/issues"
+  },
+  "homepage": "https://github.com/philer/mdm-js#readme",
+  "main": "dist/MDM.js",
+  "jsnext:main": "src/index.js",
+  "jspm": {
+    "main": "src/index.js"
+  },
+  "scripts": {
+    "lint": "eslint src/**",
+    "build": "rollup -c",
+    "predist": "npm run lint",
+    "dist": "NODE_ENV=production npm run build"
+  },
+  "devDependencies": {
+    "babel-eslint": "^6.0.0",
+    "babel-preset-es2015-rollup": "~1.1.1",
+    "babel-preset-stage-2": "^6.5.0",
+    "eslint": "~2.4.0",
+    "rollup": "~0.25.4",
+    "rollup-plugin-babel": "~2.4.0",
+    "rollup-plugin-uglify": "~0.3.1"
+  }
+}
