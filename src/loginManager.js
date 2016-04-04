@@ -24,7 +24,15 @@ const apiCallQueue = new PromiseQueue();
 let passwordExpected = false;
 
 // utility: create a shallow copy of an object including prototype
-const copy = obj => Object.assign(Object.create(Object.getPrototypeOf(obj)), obj);
+function copy(obj) {
+  const target = Object.create(Object.getPrototypeOf(obj));
+  Object.keys(obj).forEach(prop => target[prop] = obj[prop]);
+  return target;
+}
+// Better but requires polyfill for Object.assign :
+// const copy = obj => Object.assign(Object.create(Object.getPrototypeOf(obj)), obj);
+// Another alternative, not shallow:
+// const copy = obj => JSON.parse(JSON.stringify(obj));
 
 // utility: don't rely on a polyfill for Array.prototype.find
 function find(fn, arr) {
